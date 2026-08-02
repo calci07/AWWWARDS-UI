@@ -1,0 +1,4 @@
+interface:
+  display_name: "Awwwards UI - Creative Director & Builder"
+  short_description: "Plan, design, and build award-caliber websites"
+  default_prompt: "Use $awwwards-ui to create a roadmap and three routes, wait for explicit approval, then implement the approved mobile-first design in my codebase with complete assets, responsive behavior, and production validation."
