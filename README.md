@@ -101,13 +101,19 @@ Figma is optional. A Figma URL is context, not route approval, and code workflow
 
 ### Skills CLI — recommended
 
-Install directly from the full GitHub repository URL and select the packaged skill:
+Install directly with the same GitHub shorthand used by other Skills CLI packages:
 
 ```powershell
-npx skills add https://github.com/calci07/AWWWARDS-UI --skill awwwards-ui
+npx skills add calci07/AWWWARDS-UI
 ```
 
-The CLI discovers the top-level `awwwards-ui/` package through its recursive fallback and supports Codex as an installation target. Restart or begin a new agent session if the current session does not refresh its skill catalog automatically.
+The repository exposes one discoverable skill, `awwwards-ui`, so the CLI can select it without an additional flag. For a deterministic, non-interactive Codex install in scripts or CI, use:
+
+```powershell
+npx skills add calci07/AWWWARDS-UI --skill awwwards-ui --agent codex --yes
+```
+
+Restart or begin a new agent session if the current session does not refresh its skill catalog automatically.
 
 ### Manual Codex installation
 

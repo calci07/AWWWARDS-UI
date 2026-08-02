@@ -73,7 +73,7 @@ test('documentation contract is complete', async () => {
   for (const image of mediaFiles) assert.ok(readme.includes(image), image);
   assert.match(readme, /Stage A/);
   assert.match(readme, /Stage B/);
-  assert.match(readme, /npx skills add https:\/\/github\.com\/calci07\/AWWWARDS-UI/);
+  assert.match(readme, /npx skills add calci07\/AWWWARDS-UI(?:\r?\n|$)/);
 });
 
 test('licensing and attribution are explicit', async () => {
@@ -86,6 +86,12 @@ test('licensing and attribution are explicit', async () => {
   assert.match(notices, /e988add20dab0fa97d7a76781c48961c8184288e/);
   assert.match(notices, /Copyright \(c\) 2026 Leonxlnx/);
   assert.match(readme, /Taste Skill/);
+});
+
+test('repository ownership requires calci07 review', async () => {
+  await assert.doesNotReject(() => access(at('.github/CODEOWNERS')));
+  const codeowners = await readFile(at('.github/CODEOWNERS'), 'utf8');
+  assert.match(codeowners, /^\*\s+@calci07\s*$/m);
 });
 
 test('generated media and provenance are complete', async () => {
