@@ -22,7 +22,7 @@ Lock family palette/grade, light, lens/viewpoint or illustration perspective, ma
 
 Use one shared family ledger for all real, generated, and derived assets. Family-level rules and per-asset consumers live in the same record so code, crops, interaction states, rights, accessibility, and performance cannot drift.
 
-| Family/asset | Purpose and consumers | Provenance/master | Derived crops/variants | Registered hover/reveal pair | Rights | Alt/decorative state | Performance budget | Touch/reduced-motion equivalent |
+| Family/asset | Purpose and consumers | Provenance/master | Integration/crops | Registered hover/reveal pair | Rights | Alt/decorative state | Performance budget | Touch/reduced-motion equivalent |
 |---|---|---|---|---|---|---|---|---|
 
 - Record real, generated, or derived provenance, source or master prompt, owner, repository path, and rights status before integration.
@@ -39,6 +39,7 @@ An unregistered one-off, an independently generated crop, unresolved rights, mis
 The approved route, shared asset ledger, performance budget, and conflict precedence govern image-companion activation. Apply `imagegen-frontend-web`'s one-horizontal-image-per-section rule only to explicitly approved section-reference-image deliverables passed to it, never to every section or page. Product mockups, element/icon/background families, paired hover/reveal states, and other production assets follow the approved brand/asset plan and use the suitable image tool. Activate `imagegen-frontend-mobile` only for approved mobile screen/flow comp deliverables, not every breakpoint or route. Companion output counts may not expand approved scope or override accessibility, performance, or provenance constraints.
 
 - Preserve verified geometry, labels, interfaces, colors, materials, and proportions.
+- Declare `transparent-object`, `matched-field`, `container-crop`, or `full-bleed`. Standalone product/mockup assets default to true alpha with CSS owning the section field.
 - Keep product UI as real markup when possible.
 - Generate environments around truth, never invented product details.
 - Define hero, detail, contextual, mobile portrait, and thumbnail crops.
@@ -77,6 +78,6 @@ Inspect each asset master once at source or full resolution.
 
 During construction, inspect current-batch crop behavior at 390 and 1440 only.
 
-Complete six-width crop QA at Page milestones and final delivery, not per asset or per section during construction. Reject synthetic anatomy/text/reflections/contact/geometry, fake branding/data/interfaces/evidence, family drift, missing responsive crop, poor contrast, broken alpha/compression, layout shift, excessive weight, unresolved rights, or quality that works only behind blur or tiny display.
+Complete six-width crop QA at Page milestones and final delivery, not per asset or per section during construction. Reject synthetic anatomy/text/reflections/contact/geometry, fake branding/data/interfaces/evidence, family drift, missing responsive crop, poor contrast, visible canvas boundaries, matched-field seams, alpha halos, compression fringes, broken radii, abruptly clipped shadows, accidental subject cutoffs, layout shift, excessive weight, unresolved rights, or quality that works only behind blur, masking, clipping, or tiny display.
 
 Figma asset placement is relevant only when the user explicitly requests Figma; production code follows repository conventions.

@@ -294,6 +294,8 @@ The skill treats quality as a set of testable responsibilities, not a visual adj
 
 Final asset generation begins only after route approval. Stage B inventories authentic materials, locks a continuity bible, records an asset ledger, preserves verified product geometry and claims, governs responsive crops and copy-safe zones, and rejects synthetic artifacts or unresolved rights. Generated imagery cannot stand in for real customers, facilities, awards, outcomes, product proof, or regulated claims.
 
+Every generated raster declares one integration mode: `transparent-object`, `matched-field`, `container-crop`, or `full-bleed`. Standalone products and mockups default to true alpha with CSS owning the section background. Container crops define safe zones, overscan, focal positions, intentional cutoff edges, and shadow behavior. A visible canvas rectangle, mismatched field, alpha halo, compression fringe, abruptly clipped shadow, or accidental subject crop is a hard failure; clipping, masks, blur, or `object-fit` cannot conceal it.
+
 ### Accessibility
 
 Implementations use semantic structure, keyboard-operable controls, visible focus, logical focus order, touch alternatives, readable contrast and zoom behavior, sensible labels and landmarks, and reduced-motion equivalents. Hover enriches but never unlocks content; inaccessible canvas-only content and interaction traps are hard failures.
