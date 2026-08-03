@@ -3,13 +3,13 @@ name: awwwards-ui
 description: "Use when planning, recommending, designing, building, redesigning, or auditing an award-caliber marketing website or visually ambitious responsive landing page in code; also supports an explicitly requested optional Figma workflow."
 ---
 
-# Awwwards UI v6 - Creative Director & Frontend Builder
+# Awwwards UI v7 - Creative Director & Frontend Builder
 
 Act as the product's creative director, senior web designer, art director, and frontend builder. Turn product truth into a balanced, distinctive, production-grade website. The user remains the art director: roadmap and recommendation first, explicit approval second, design and implementation in the actual codebase third.
 
 This is an approval-gated, code-first skill. After approval, finish the scoped implementation rather than stopping at mockups or advice. Figma is an optional target only when the user explicitly requests it.
 
-## Code-first v6 contract
+## Code-first v7 contract
 
 - **Stage A — Recommend and STOP:** establish product truth, make the roadmap, report companion availability, present exactly three complete routes, recommend one, request explicit approval, then STOP.
 - **Stage B — Execute in Code:** after route approval and a valid code target, inspect the repository, create the approved brand and asset system, implement the real responsive experience, validate rendered balance, and run production checks.
@@ -22,6 +22,9 @@ This is an approval-gated, code-first skill. After approval, finish the scoped i
 - Before creating routes, read the current `design-taste-frontend`. After approval, re-read `design-taste-frontend`, then read `imagegen-frontend-web`, `imagegen-frontend-mobile`, and `brandkit` when available and applicable.
 - If a companion skill is unavailable, disclose the gap and use the named bundled fallback instead of claiming it ran.
 - Use GPT Image 2 or system image generation for product mockups, background images, visual elements, and a consistent illustration family.
+- Treat generated imagery as part of the section composition, not a rectangular file dropped into it. Every generated raster declares an integration mode: `transparent-object`, `matched-field`, `container-crop`, or `full-bleed`.
+- A standalone product, mockup, or isolated object defaults to true transparent alpha so CSS owns the section background. A container crop needs approved safe zones, bleed, focal position, shadow behavior, and intentional cutoff edges. `object-fit`, clipping, masks, blur, or a similar background color never repair an embedded white/colored matte.
+- Reject any generated asset that reads as pasted on: visible rectangle, mismatched field, halo/fringe, jagged alpha, compression ring, abruptly clipped shadow, accidental subject amputation, or breakpoint crop that loses the focal point. Read [Seamless image integration](references/seamless-image-integration.md) for the production and QA contract.
 - Mobile-first means semantic source order, action priority, app-like hierarchy, touch reachability, and purpose-built mobile composition. Structure/construction and Design-batch inspection use 390 and 1440 only; 320 is a stress-test viewport at Page milestones and final delivery.
 - Every expanded route has a standalone **Inspiration board** with three to five observed references. Each counted reference shows a clickable live website URL, a clickable discovery-source URL when available, an `Observed via` line tied to the Observation ledger, `Borrow`, `Apply`, `Mobile translation`, and `Do not copy`. `Borrow` states the principle borrowed, `Apply` states where it applies, and `Do not copy` states the non-copy boundary.
 - When browser capture is available, show one to three representative screenshot previews per route without blocking or materially delaying the recommendation; otherwise disclose that previews are unavailable and keep the complete clickable list.
@@ -38,8 +41,9 @@ This is an approval-gated, code-first skill. After approval, finish the scoped i
 
 Read [Roadmap and approval](references/roadmap-and-approval.md) before responding to a new design, redesign, or substantial focused-design request. Read [Repository preflight](references/repo-preflight.md) and [Code execution](references/code-execution.md) before Stage B code writes.
 Read [Taste integration](references/taste-integration.md) before creating routes and again before Stage B implementation.
+Read [Design direction principles](references/design-direction-principles.md) before creating routes and again before Stage B implementation.
 
-## V6 transformation contract
+## V7 transformation contract
 
 - Speed means fewer redundant operations, never less design ambition.
 - A `directory-study`, `live_url: null`, or otherwise directory-only source may supply a study-derived heuristic proposed for this design, with its limitation visible. It must not occupy a counted `Borrow` slot or support exact placement or interaction attribution.
@@ -242,6 +246,8 @@ For each route, complete every field in the Stage A response gate, including the
 
 Stage A stays technique-neutral. Discuss behavior and feasibility without choosing packages, frameworks, animation engines, CSS techniques, or file architecture. Sample prompt intent is allowed; generating the final images is not.
 
+For every route's **Generated-asset families and sample prompt intent**, name the proposed integration mode, background ownership, responsive crop family, and intended cutoff/bleed behavior. Keep this as planning intent until approval.
+
 ### 6. Ask for approval and STOP
 
 End with:
@@ -301,9 +307,9 @@ Reuse suitable architecture and components. Do not overwrite unrelated edits. As
 
 ### 2. Build the approved brand and asset system
 
-Read [Brand and assets](references/brand-and-assets.md), [GPT Image 2 art direction](references/gpt-image-2-art-direction.md), and [Visual assets](references/visual-assets.md).
+Read [Brand and assets](references/brand-and-assets.md), [GPT Image 2 art direction](references/gpt-image-2-art-direction.md), [Visual assets](references/visual-assets.md), and [Seamless image integration](references/seamless-image-integration.md).
 
-Create a continuity bible and asset ledger covering palette, typography, grid, spacing, radii, strokes, material language, art direction, crops, motion character, and usage rights. Then create only the approved families the product needs:
+Create a continuity bible and asset ledger covering palette, typography, grid, spacing, radii, strokes, material language, art direction, integration mode, background ownership, alpha/opaque output, crops, safe zones, bleed/cutoff edges, shadow behavior, motion character, and usage rights. Then create only the approved families the product needs:
 
 - product, packaging, device, or service mockups;
 - editorial campaign images and environmental plates;
@@ -312,7 +318,7 @@ Create a continuity bible and asset ledger covering palette, typography, grid, s
 - a consistent illustration or expressive-icon family;
 - registered plain/material, clean/distressed, day/night, or before/after pairs for reveal interactions.
 
-Use one master per concept and derive coordinated crops and material states. Paired reveal images must preserve subject geometry, camera, crop, lens, and lighting. Avoid AI tells: pseudo-text, plastic texture, incoherent reflections, impossible joints, duplicated details, generic gradients, over-smoothed skin, and unrelated styles.
+Use one master per concept and derive coordinated crops and material states. Paired reveal images must preserve subject geometry, camera, crop, lens, and lighting. Avoid AI tells: pseudo-text, plastic texture, incoherent reflections, impossible joints, duplicated details, generic gradients, over-smoothed skin, unrelated styles, contaminated alpha edges, and baked rectangular backgrounds that do not belong to the composition.
 
 Functional navigation and control icons must remain legible, editable, accessible SVGs or a coherent code icon library—not generated raster art. Follow the repository's asset directories, formats, naming, responsive image pipeline, and licensing notes.
 
@@ -371,6 +377,7 @@ At interim construction reviews, run the project and inspect the current two-to-
 - asymmetry has an explicit counterweight;
 - optical mass, whitespace, density, and edge pressure feel intentional;
 - headline wraps, body measure, media crops, and focal points hold;
+- generated imagery has no visible canvas boundary, field mismatch, alpha halo, jagged edge, compression fringe, abruptly clipped shadow, or accidental cutoff at normal scale and 200% edge inspection;
 - sections have deliberate pacing rather than repeated generic blocks;
 - no overflow, clipping, occlusion, dead space, accidental symmetry, or unsupported hover remains;
 - motion-off and reduced-motion states preserve the design.

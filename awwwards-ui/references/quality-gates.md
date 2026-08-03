@@ -17,6 +17,7 @@ A dramatic screenshot is not a finished website. Pass every applicable gate befo
 - One thesis governs type, color, image, layout, material, and motion.
 - References informed principles rather than copied composition.
 - Generated assets share a continuity bible, ledger, rights record, and anti-synthetic review.
+- Every generated raster declares an integration mode and passes the seamless-image gate: no visible canvas rectangle, field mismatch, alpha halo, compression fringe, broken radius, abruptly clipped shadow, accidental subject cutoff, or lost breakpoint focal point.
 - No lorem ipsum, fake interface evidence, generic AI luxury, arbitrary cards, gradients, blobs, or empty spectacle are presented as final.
 
 ## Transformation and anti-generic gate

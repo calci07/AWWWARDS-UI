@@ -41,6 +41,7 @@ Record every asset:
 | Formats | Wide, portrait, phone, detail, transparent, copy-safe zones |
 | Relationship | Independent master, master edit, or approved crop |
 | Direction | Prompt, exclusions, palette, light, viewpoint, material, grade |
+| Integration | `transparent-object`, `matched-field`, `container-crop`, or `full-bleed`; background owner/token; alpha/opaque master; safe zones; overscan; intended cutoff edges; shadow behavior |
 | Governance | Rights, consent, disclosure, owner, status, rejection reason |
 | Placement | Repository path, consuming component/page, crop and alt intent |
 
@@ -48,7 +49,7 @@ Variation may change subject or scale, not the visual world.
 
 ## Asset classes
 
-- **Product mockups:** preserve supplied geometry, labels, marks, colors, ports, materials, and proportions. Generate environments around product truth; never invent it.
+- **Product mockups:** preserve supplied geometry, labels, marks, colors, ports, materials, and proportions. Generate environments around product truth; never invent it. Standalone mockups default to a true-alpha master unless an approved contextual scene requires an opaque plate.
 - **Campaign/editorial imagery:** direct a specific human or material story, plausible production conditions, purposeful copy space, and separate mobile compositions where needed.
 - **Backgrounds/textures/elements:** support hierarchy; test seams, alpha, compression, responsive crop, and text contrast.
 - **Expressive illustrations and icons:** one governed family with defined stroke, fill, perspective, corner, texture, and metaphor rules. These may be generated.

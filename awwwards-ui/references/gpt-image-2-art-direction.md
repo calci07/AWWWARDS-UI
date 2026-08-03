@@ -45,6 +45,7 @@ Create an asset table before prompts:
 | Aspect family | wide, portrait, square, detail, transparent layer |
 | Dependency | independent master or edit derived from another asset |
 | Rendered role | responsive image, overlay, clipped reveal, poster, sequence, background, texture |
+| Integration | mode, CSS/asset background owner, exact field token, alpha/opaque master, safe zones, overscan, intentional cutoff edges, shadow finish |
 | Accessibility | alt purpose or decorative status; nearby HTML explanation |
 | QA | identity, alignment, material, text, anatomy, rights, crop checks |
 
@@ -62,7 +63,7 @@ Use this order:
 6. **Material/surface:** physically plausible response, texture scale, wear/imperfection, restraint.
 7. **Palette and grade:** named tonal relationships tied to the site system.
 8. **Production character:** editorial restraint, believable retouch, print/process cues.
-9. **Output role:** hero/background/detail/transparent layer and intended aspect ratio.
+9. **Output role:** hero/background/detail/transparent layer, integration mode, background ownership, intended aspect ratio, safe zones, overscan, and cutoff/shadow behavior.
 10. **Negative constraints:** specific likely failures, not a generic "no bad quality" list.
 
 Keep visible typography and UI in HTML. Ask for no text/logos/labels unless text inside the image is genuinely required and will be manually verified.
@@ -145,7 +146,7 @@ Define focal/copy safe zones before generation.
 - **Editorial landscape:** stable repeatable ratio such as 4:3 or 3:2.
 - **Portrait:** 4:5 or 3:4 for people/products and phone interludes.
 - **Detail:** macro/close view generated as a fresh asset, not cropped from a small board.
-- **Transparent layer:** request a clean isolated subject only when alpha/compositing is supported and verify edge quality.
+- **Transparent layer:** request a clean isolated subject on true alpha; exclude studio sweeps, background rectangles, checkerboards, frames, and canvas shadows; verify edge quality over light, dark, and saturated diagnostic fields.
 
 Define an art-directed source family and intended crop for each breakpoint. Keep paired variants matched within each aspect family. Record target display dimensions and later loading risk; do not place the full generation master in every viewport frame.
 
@@ -163,6 +164,7 @@ Inspect every output at full size and at final layout size.
 8. **Rendered behavior:** intended effect works at responsive sizes, includes touch/keyboard behavior where interactive, and has a reduced-motion or static alternative.
 9. **Accessibility:** meaningful image has useful alt/nearby explanation; decorative image is treated accordingly.
 10. **Rights/privacy:** sources and real identities are authorized; no deceptive representation.
+11. **Integration:** no visible canvas rectangle, matched-field seam, alpha fringe, compression ring, broken radius, abruptly clipped shadow, or accidental subject cutoff at normal scale and 200% edge inspection.
 
 Reject and regenerate when a core check fails. Do not conceal generation drift with blur, masks, tiny display, or alignment hacks.
 

@@ -521,7 +521,7 @@ test('rejects a present Taste pin whose JSON value is null', () => {
   assert.match(result.stderr, /taste-pin\.json must contain an object/i);
 });
 
-test('rejects a missing Taste pin in the final v6 package', () => {
+test('rejects a missing Taste pin in the current package', () => {
   const dir = makeSkill((skillDir) => {
     unlinkSync(join(skillDir, 'data', 'taste-pin.json'));
   });
@@ -530,7 +530,7 @@ test('rejects a missing Taste pin in the final v6 package', () => {
   assert.match(result.stderr, /Missing data\/taste-pin\.json/i);
 });
 
-test('rejects missing v6 Overhaul, Transformation Map, and Route Realization Ledger contracts', () => {
+test('rejects missing Overhaul, Transformation Map, and Route Realization Ledger contracts', () => {
   const dir = makeSkill((skillDir) => {
     const roadmapPath = join(skillDir, 'references', 'roadmap-and-approval.md');
     const roadmap = readFileSync(roadmapPath, 'utf8')
@@ -552,7 +552,7 @@ test('rejects missing v6 Overhaul, Transformation Map, and Route Realization Led
   assert.match(result.stderr, /universal Route Realization Ledger/i);
 });
 
-test('rejects missing v6 conditional, pass-state, or relevance-gated semantics', () => {
+test('rejects missing conditional, pass-state, or relevance-gated semantics', () => {
   const dir = makeSkill((skillDir) => {
     const codePath = join(skillDir, 'references', 'code-execution.md');
     const code = readFileSync(codePath, 'utf8')

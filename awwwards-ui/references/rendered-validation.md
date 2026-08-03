@@ -43,7 +43,8 @@ For each construction or milestone screenshot:
 3. Check section rhythm, whitespace distribution, alignment, text measure, crop intent, edge tension, and repeated-shape monotony.
 4. Verify asymmetric compositions have a deliberate counterweight and that centered compositions have enough contrast in scale, texture, or pacing.
 5. Inspect individual sections at readable scale; a reduced full-page image can conceal overlap, clipping, and weak type.
-6. Correct the smallest responsible token, constraint, crop, or hierarchy decision; then recapture only the affected construction views or required milestone views.
+6. Inspect generated-image boundaries at normal scale and 200%: canvas rectangles, field seams, alpha fringes, compression rings, radius breaks, shadow cutoffs, and accidental subject crops are hard failures.
+7. Correct the smallest responsible token, constraint, crop, or hierarchy decision; then recapture only the affected construction views or required milestone views.
 
 At page milestones and final delivery, use the one bounded Page-level recovery cycle when necessary. Do not compensate for weak hierarchy with extra decoration or restart a consumed section-local loop.
 

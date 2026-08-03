@@ -714,7 +714,7 @@ for (const contract of referenceContracts) {
   }
 }
 
-const v6ReferenceContracts = [
+const currentReferenceContracts = [
   {
     file: 'roadmap-and-approval.md',
     requirements: [
@@ -768,7 +768,7 @@ const v6ReferenceContracts = [
   },
 ];
 
-for (const contract of v6ReferenceContracts) {
+for (const contract of currentReferenceContracts) {
   const label = `references/${contract.file}`;
   const source = readRequired(join(root, 'references', contract.file), label);
   requirePatterns(source, label, contract.requirements);
@@ -866,7 +866,7 @@ if (catalogText !== null) {
     errors.push(`Inspiration catalog must contain 100 to 1000 rows; found ${catalogRows.length}`);
   }
   if (catalogRows.length !== 341) {
-    errors.push(`Pinned v6 inspiration catalog must contain exactly 341 rows; found ${catalogRows.length}`);
+    errors.push(`Pinned inspiration catalog must contain exactly 341 rows; found ${catalogRows.length}`);
   }
 
   const seenIds = new Set();
